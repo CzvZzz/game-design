@@ -1,11 +1,13 @@
 import pygame.font
 
-class Play_Button():
+class Button():
 
-    def __init__(self, ai_settings, screen, msg):
+    def __init__(self, ai_settings, screen, msg, x, y):
         '''初始化按钮的属性'''
         self.screen = screen
         self.screen_rect = screen.get_rect()
+        self.x = x
+        self.y = y
 
         # 设置按钮的尺寸和其他属性
         self.width, self.height = 200, 50
@@ -14,9 +16,7 @@ class Play_Button():
         self.font = pygame.font.SysFont(None, 48)
 
         # 创建按钮的rect对象，并使其居中
-        self.rect = pygame.Rect(0, 0, self.width, self.height)
-        self.rect.center =self.screen_rect.center
-
+        self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
         # 按钮的标签只需创建一次
         self.pre_msg(msg)
 

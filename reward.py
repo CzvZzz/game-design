@@ -2,15 +2,15 @@ import pygame
 from pygame.sprite import Sprite
 
 class Reward(Sprite):
-    def __init__(self, screen, ai_settings, image):
+    def __init__(self, screen, ai_settings, path):
         # 初始化奖品并设置奖品位置
         super(Reward, self).__init__()
         self.screen = screen
         self.ai_settings = ai_settings
-        self.image = image
+        self.path = path
 
         # 加载奖品图像并获取其外接矩形
-        # self.image = pygame.image.load('images/reward.bmp')
+        self.image = pygame.image.load(self.path)
         self.rect = self.image.get_rect()
 
         # 获取窗口的外接矩形

@@ -4,7 +4,7 @@ class GameStats():
         # 初始化统计信息
         self.ai_settings = ai_settings
         self.reset_stats()
-
+        self.level = 0
         # 游戏刚启动时处于停止状态
         self.game_active = False
         with open('stats\max_score.txt', 'r') as ms:
